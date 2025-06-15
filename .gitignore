@@ -1,0 +1,14 @@
+# Ignore node modules
+node_modules/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore environment files
+.env
+
+# Ignore log files
+*.log
+
+
+Appointment-MultiAgent/venv/
