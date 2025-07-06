@@ -12,13 +12,13 @@ load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 print(f"Hugging Face Key: {TOKEN}")
 
-HUGGINGFACE_REPOID = "mistralai/Mistral-7B-Instruct-v0.3"
+HUGGINGFACE_REPOID = "HuggingFaceH4/zephyr-7b-beta"
 
 def load_llm(hugging_face_repoid, promt):
     #llm = HuggingFaceEndpoint(repo_id=hugging_face_repoid, temperature=0.5,huggingfacehub_api_token = TOKEN, max_new_tokens= 512)
     client = InferenceClient(model=hugging_face_repoid, token=TOKEN)
 
-    llm = client.text_generation(promt, max_new_tokens=512, temperature=0.7)
+    llm = client.text_generation(promt)
     return llm
 
 #Connect with FAISS
